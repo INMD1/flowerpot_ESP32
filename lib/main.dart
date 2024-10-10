@@ -1,3 +1,4 @@
+import 'package:flowerpot_esp32/page/color_set.dart';
 import 'package:flutter/material.dart';
 import 'package:flowerpot_esp32/page/blue_tooth.dart';
 import 'package:flowerpot_esp32/page/main_page.dart';
@@ -113,8 +114,8 @@ class BluetoothPermissionPage extends StatelessWidget {
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (context, state) => const mainpage()),
-    GoRoute(path: '/blue_page', builder: (context, state) =>  BluetoothPermissionPage()),
-    GoRoute(path: '/color_picker', builder: (context, state) =>  BluetoothPermissionPage()),
+    GoRoute(path: '/blue_page', builder: (context, state) =>  BluePage()),
+    GoRoute(path: '/color_picker', builder: (context, state) =>  color_pickerepage()),
   ],
   errorBuilder: (context, state) => const ErrorPage(),
 );

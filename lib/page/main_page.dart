@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class mainpage extends StatefulWidget {
@@ -32,7 +33,9 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
   Future<void> _loadLocation() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     data = jsonDecode(sp.getString("blue_connect").toString());
-    print(data);
+    setState(() {
+      data = jsonDecode(sp.getString("blue_connect").toString());
+    });
   }
 
   @override
@@ -194,9 +197,12 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold)),
 
-                              SizedBox(height: screenHeight * 0.01),
+                              SizedBox(height: screenHeight * 0.02),
                               InkWell(
                                   onTap: () {
+                                    if(data["connect"] == "0"){
+                                      context.go("/blue_page");
+                                    }
                                     print("나눌려짐");
                                   },
                                   child: Row(
@@ -217,11 +223,10 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                                       Text("MAC 주소"),
                                       Text(data["connect"] == "0"
                                           ? "연결이 안되어 있습니다."
-                                          : "null",
+                                          : "0.",
                                         style: TextStyle(fontSize: 10),)
                                     ],
                                   ))
-
                             ],
                           )
                       )
