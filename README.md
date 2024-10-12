@@ -6,7 +6,7 @@
 >거의 이런 것이지 뭐.. (사진출처: 대학내일)
 
 ## 프로젝트에 사용한 기기나 기술
-[기술, 프레임워크]
+[기술, 프레임워크]<br>
 BLE(Bluetooth Low Energy)<br>
 Flutter Framwork
 
