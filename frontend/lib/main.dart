@@ -114,7 +114,7 @@ class BluetoothPermissionPage extends StatelessWidget {
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (context, state) => const mainpage()),
-    GoRoute(path: '/blue_page', builder: (context, state) =>  BluePage()),
+    GoRoute(path: '/blue_page', builder: (context, state) =>  bluepage()),
     GoRoute(path: '/color_picker', builder: (context, state) =>  color_pickerepage()),
   ],
   errorBuilder: (context, state) => const ErrorPage(),

@@ -19,6 +19,7 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    print("이 페이지가 로드됨");
     _loadLocation();
     WidgetsBinding.instance.addObserver(this);
   }
