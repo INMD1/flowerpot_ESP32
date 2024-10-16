@@ -1,0 +1,1 @@
+ /home/leehojun/바탕화면/Github./flowerpot_esp32/.dart_tool/flutter_build/1ee4b8a86114c2c16a6a9cf71d0cde93/native_assets.yaml: 
