@@ -108,15 +108,15 @@ class _bluepageState extends State<bluepage> with WidgetsBindingObserver {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('장치 정보'),
+          title: const Text('장치 정보'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('이 기기로 블루투스 정보를 저장하시겟습니까?\n', style: TextStyle(fontSize: 17),),
+              const Text('이 기기로 블루투스 정보를 저장하시겟습니까?\n', style: TextStyle(fontSize: 17),),
               Text('이름: ${r.device.advName.isNotEmpty ? r.device.advName : "N/A"}'),
               Text('MAC 주소: ${r.device.remoteId.toString()}\n'),
-              Text("저장후 잠시후 연결을 시작합니다.")
+              const Text("저장후 잠시후 연결을 시작합니다.")
             ],
           ),
           actions: [
@@ -201,8 +201,8 @@ class _bluepageState extends State<bluepage> with WidgetsBindingObserver {
 
   Future<void> _showsnackbars(BuildContext context) async {
     final snackBar = SnackBar(
-      content: Text('정상적으로 연결 했습니다.'),
-      duration: Duration(seconds: 5),
+      content: const Text('정상적으로 연결 했습니다.'),
+      duration: const Duration(seconds: 5),
       action: SnackBarAction(
         label: '확인',
         onPressed: () {

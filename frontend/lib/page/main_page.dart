@@ -52,7 +52,7 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
 
     return Scaffold(
       body: Container(
-        color: Color(0xffe1e7ef),
+        color: const Color(0xffe1e7ef),
         child: Column(
           children: [
             Expanded(
@@ -61,13 +61,13 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: screenHeight * 0.08),
-                    Text("스마트팜 센서 현황", style: TextStyle(fontSize: 35)),
-                    Text("XXXX.XX.XX XX:XX 기준", style: TextStyle(fontSize: 12)),
+                    const Text("스마트팜 센서 현황", style: TextStyle(fontSize: 35)),
+                    const Text("XXXX.XX.XX XX:XX 기준", style: TextStyle(fontSize: 12)),
                   ],
                 )),
             Expanded(
               flex: 7,
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Container(
                   margin: EdgeInsets.all(screenWidth * 0.04),
@@ -85,24 +85,24 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                         width: screenWidth * 0.39,
                         height: screenHeight * 0.19,
                         child: DecoratedBox(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xfffcfcfc),
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
                             ),
                           ),
                           child: Container(
-                            margin: EdgeInsets.all(20),
+                            margin: const EdgeInsets.all(20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("온도센서",
+                                const Text("온도센서",
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold)),
                                 SizedBox(height: screenHeight * 0.008),
-                                Center(
-                                  child: Text("10" + "°C",
+                                const Center(
+                                  child: Text("10" "°C",
                                       style: TextStyle(fontSize: 50)),
                                 )
                               ],
@@ -114,24 +114,24 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                         width: screenWidth * 0.39,
                         height: screenHeight * 0.19,
                         child: DecoratedBox(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xfffcfcfc),
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
                             ),
                           ),
                           child: Container(
-                            margin: EdgeInsets.all(20),
+                            margin: const EdgeInsets.all(20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("대기 습도",
+                                const Text("대기 습도",
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold)),
                                 SizedBox(height: screenHeight * 0.008),
-                                Center(
-                                  child: Text("10" + "%",
+                                const Center(
+                                  child: Text("10" "%",
                                       style: TextStyle(fontSize: 50)),
                                 )
                               ],
@@ -160,7 +160,7 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                         ),
                       ),
                       child: Container(
-                        margin: EdgeInsets.all(20),
+                        margin: const EdgeInsets.all(20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -169,8 +169,8 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold)),
                             SizedBox(height: screenHeight * 0.008),
-                            Center(
-                              child: Text("10" + "%",
+                            const Center(
+                              child: Text("10" "%",
                                   style: TextStyle(fontSize: 50)),
                             )
                           ],
@@ -182,14 +182,14 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                     width: screenWidth * 0.39,
                     height: screenHeight * 0.19,
                     child: DecoratedBox(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xfffcfcfc),
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
                       ),
                       child: Container(
-                          margin: EdgeInsets.fromLTRB(14, 20, 10, 20),
+                          margin: const EdgeInsets.fromLTRB(14, 20, 10, 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -221,11 +221,11 @@ class _mainpageState extends State<mainpage> with WidgetsBindingObserver {
                                     crossAxisAlignment: CrossAxisAlignment.
                                     start,
                                     children: [
-                                      Text("MAC 주소"),
+                                      const Text("MAC 주소"),
                                       Text(data["connect"] == "0"
                                           ? "연결이 안되어 있습니다."
                                           : "0.",
-                                        style: TextStyle(fontSize: 10),)
+                                        style: const TextStyle(fontSize: 10),)
                                     ],
                                   ))
                             ],

@@ -16,7 +16,7 @@ void main() async {
 
 Future<void> first_data()  async {
   SharedPreferences Shardata = await SharedPreferences.getInstance();
-  if (await Shardata.getString("blue_connect") == null) {
+  if (Shardata.getString("blue_connect") == null) {
     await Shardata.setString("blue_connect", '{"connect":"0"}');
     print("처음이라서 생성함");
   }else{
@@ -29,7 +29,7 @@ class PageLoader extends StatelessWidget {
   final WidgetBuilder builder;
 
 
-  const PageLoader({required this.future, required this.builder});
+  const PageLoader({super.key, required this.future, required this.builder});
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +54,8 @@ class PageLoader extends StatelessWidget {
 
 // 블루투스 권한 페이지
 class BluetoothPermissionPage extends StatelessWidget {
+  const BluetoothPermissionPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,8 +116,8 @@ class BluetoothPermissionPage extends StatelessWidget {
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (context, state) => const mainpage()),
-    GoRoute(path: '/blue_page', builder: (context, state) =>  bluepage()),
-    GoRoute(path: '/color_picker', builder: (context, state) =>  color_pickerepage()),
+    GoRoute(path: '/blue_page', builder: (context, state) =>  const bluepage()),
+    GoRoute(path: '/color_picker', builder: (context, state) =>  const color_pickerepage()),
   ],
   errorBuilder: (context, state) => const ErrorPage(),
 );
