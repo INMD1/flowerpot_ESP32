@@ -15,7 +15,7 @@ ESP32<br>
 온습도센서(DHT)<br>
 RGB가 지원되는 LED
 
-##명령어 
+## 명령어 
 ```
 get_temp_humidity -> json 형태로 온도와 실내 습도를 알려줌
 connect_test -> json형태로 연결 상태를 알려준다. 연결이 안된경우아 오류가 발생하면 안알려준다
