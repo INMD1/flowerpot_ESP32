@@ -18,6 +18,8 @@ ESP32<br>
 온습도센서(DHT)<br>
 RGB가 지원되는 LED
 
+![image](https://github.com/user-attachments/assets/40f0e607-49bd-440d-a80f-5aed85190630)
+> 상자안에 기기를 넣어놨다.
 ## 명령어 
 ```
 get_temp_humidity -> json 형태로 온도와 실내 습도를 알려줌
