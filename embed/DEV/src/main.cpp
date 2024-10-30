@@ -14,8 +14,8 @@
 #define DHTTYPE DHT11 // 사용 중인 센서 타입
 
 // WS2812B 설정
-#define LED_PIN 6   // LED 핀 (WS2812B가 연결된 핀)
-#define NUM_LEDS 16 // LED 개수
+#define LED_PIN 12   // LED 핀 (WS2812B가 연결된 핀)
+#define NUM_LEDS 7 // LED 개수
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -107,8 +107,8 @@ class MyCallbacks : public BLECharacteristicCallbacks
 
         // JSON 형식으로 데이터를 작성
         StaticJsonDocument<200> doc;
-        doc["temperature"] = temperature;
-        doc["humidity"] = humidity;
+        doc["t"] = temperature;
+        doc["h"] = humidity;
         String output;
         serializeJson(doc, output);
 
@@ -140,13 +140,13 @@ class MyCallbacks : public BLECharacteristicCallbacks
       }
 
       // RGB 설정
-      if (receivedData.startsWith("rgb_set"))
+      if (receivedData.startsWith("rgb"))
       {
         char receivedDataChar[receivedData.length() + 1];
         receivedData.toCharArray(receivedDataChar, receivedData.length() + 1);
 
         // "rgb_set" 제거
-        removeWord(receivedDataChar, "rgb_set");
+        removeWord(receivedDataChar, "rgb");
 
         // RGB 값 추출
         int r, g, b;
